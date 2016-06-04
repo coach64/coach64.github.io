@@ -1,0 +1,225 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        .block {
+            transform-style: preserve-3d;
+			transition: transform 1.5s;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transition: -webkit-transform 1.5s;
+        }
+        .rotated, .block:hover {
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+        }
+
+        .block .front {
+            z-index: 50;
+        }
+        .block .back {
+            z-index: 10;
+			box-shadow: 0 2px 5px #ccc;
+			background-color: #fff;
+        }
+        .rotated .back, .block:hover .back {
+            z-index: 99;
+
+        }
+		.back.side {
+			margin-top: -150px;
+			padding-top: 1px;
+			padding-left: 0px;
+			padding-right: 4px;
+			padding-bottom: 2px;
+			vertical-align: middle;
+		}
+				
+        .side {
+			min-width: 150px;
+			min-height: 150px;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+
+        .front img {} .back {
+			transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+        }
+
+    main {
+        margin-top: 40px;
+    }
+td {
+	min-width: 250px;
+}
+table {
+	margin:auto;
+}
+h3 {
+	text-align:center;
+}
+.back ul {
+	margin-left: -5px;
+}
+#d1 {background: url('img/1.svg') center center no-repeat;}
+#d2 {background: url('img/2.svg') center center no-repeat;}
+#d3 {background: url('img/3.svg') center center no-repeat;}
+#d4 {background: url('img/4.svg') center center no-repeat;}
+#d5 {background: url('img/5.svg') center center no-repeat;}
+#d6 {background: url('img/6.svg') center center no-repeat;}
+html, body {
+	/*font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
+	font-family: Georgia, "Times New Roman", Times, serif;
+	color: #888888;
+	background-color: #f8f8f8;	
+}
+h3 {
+	font-weight: 700;
+}
+a {
+	text-decoration:none;
+     border-bottom: 1px dashed #337ab7;
+}
+a:hover {
+	text-decoration:none;
+     border-bottom-width: 1px;
+     border-bottom-style: solid;
+}
+    </style>
+    <script type="text/javascript">
+var changeClass = function(){};
+$(document).ready(function(){
+        changeClass = function (block) {
+            $(block).toggleClass("rotated");
+        }
+        $(".block").bind("mouseover", function() {
+            $(this).addClass("rotated");
+        })
+        $(".block").bind("mouseout", function() {
+            $(this).removeClass("rotated");
+        })
+});
+    </script>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="row-centered">
+			<table>
+<tr>
+<td></td>
+<td>
+<div class="block" onclick="changeClass(this)">
+	<div id="d1" class="front side">
+	</div>
+	<div class="back side">
+		<h3><a href="#owner">Владелец бизнеса</a></h3>
+		<ul>
+			<li>Как удержать клиента?</li>
+			<li>Как сделать, чтобы клиент работал на вас?</li>
+			<li>Как правильно делегировать?</li>
+			<li>Как распределить обязанности?</li>
+		</ul>
+	</div>
+</div>
+</td>
+<td></td>
+</tr>
+<tr>
+<td>
+<div class="block" onclick="changeClass(this)">
+	<div id="d6" class="front side"></div>
+	<div class="back side">
+		<h3><a href="#sales">Специалист отдела продаж</a></h3>
+		<ul>
+			<li>Как подвести клиента к сделке?</li>
+			<li>Как сделать клиента постоянным?</li>
+			<li>Как продавать больше на одном клиенте?</li>
+			<li>Как провести переговоры эффективно?</li>
+			<li>Как продавать в условиях постоянного изменения цен?</li>
+		</ul>
+	</div>
+</div>
+</td>
+<td></td>
+<td>
+<div class="block" onclick="changeClass(this)">
+	<div id="d2" class="front side"></div>
+	<div class="back side">
+		<h3><a href="#ceo">Директор организации</a></h3>
+		<ul>
+			<li>Кого сделать руководителем отдела?</li>
+			<li>Как привить сотрудникам желание работать?</li>
+			<li>Как разобраться, кто за что отвечает?</li>
+			<li>Как создать свой отдел развития персонала?</li>
+		</ul>
+	</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<div class="block" onclick="changeClass(this)">
+	<div id="d5" class="front side"></div>
+	<div class="back side">
+		<h3><a href="#hr">HR</a></h3>
+		<ul>
+			<li>Где взять персонал?</li>
+			<li>Как оценить претендента?</li>
+			<li>Как подбирать персонал?</li>
+			<li>Как проводить собеседования?</li>
+			<li>Кто должен оценивать кандидата и в каком порядке?</li>
+			<li>Нужны ли рекомендации при найме?</li>
+			<li>Брать или не брать на работу знакомых?</li>
+		</ul>
+	</div>
+</div>
+</td>
+<td></td>
+<td>
+<div class="block" onclick="changeClass(this)">
+	<div id="d3" class="front side"></div>
+	<div class="back side">
+		<h3><a href="#manager">Руководитель отдела</a></h3>
+		<ul>
+			<li>Как научить сотрудников улыбаться клиентам?</li>
+			<li>Как увеличить конверсию?</li>
+			<li>Как научить продавать?</li>
+			<li>Почему опытные сотрудники перестали продавать?<br>Как вернуть их в рабочее состояние?</li>
+		</ul>
+	</div>
+</div>
+</td>
+</tr>
+<tr>
+<td></td>
+<td>
+<div class="block" onclick="changeClass(this)">
+	<div id="d4" class="front side"></div>
+	<div class="back side">
+		<h3><a href="#applicant">Соиcкатель</a></h3>
+		<ul>
+			<li>Как составить резюме?</li>
+			<li>Как пройти собеседование?</li>
+			<li>Куда могу устроиться?</li>
+			<li>Как вести себя на собеседовании?</li>
+			<li>Менять работу или нет?</li>
+		</ul>
+	</div>
+</div>
+</td>
+<td></td>
+</tr>
+			</table>
+			</div>
+	</main>
+</body>
